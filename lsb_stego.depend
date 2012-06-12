@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1338944205 source:c:\xavi\software engineering\codeblocks\lsb_stego\io.cpp
+	<windows.h>
+	<stdio.h>
+	<io.h>
+	<math.h>
+	"Steg_LSB.h"
+
+1338944205 c:\xavi\software engineering\codeblocks\lsb_stego\steg_lsb.h
+
+1339185113 source:c:\xavi\software engineering\codeblocks\lsb_stego\steg_lsb.cpp
+	<windows.h>
+	<stdio.h>
+	<io.h>
+	<math.h>
+	"Steg_LSB.h"
+
+1338944205 source:c:\xavi\software engineering\codeblocks\lsb_stego\hide.cpp
+	<windows.h>
+	<stdio.h>
+	<io.h>
+	<math.h>
+	"Steg_LSB.h"
+
