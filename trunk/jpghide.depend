@@ -1,0 +1,694 @@
+# depslib dependency file v1.0
+1341350026 source:c:\xavi\software engineering\codeblocks\jpghide\hide.cpp
+	"include\Hide.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\hide.h
+	<fstream>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"jpencobk.h"
+	"jpenquan.h"
+	"jpegenco.h"
+	"jpegdeco.h"
+	"jpdecomp.h"
+	"jpdequan.h"
+	"bmpdecod.h"
+	"bmpencod.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpencobk.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpeg.h
+	"datatype.h"
+	"jpmarker.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\datatype.h
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpmarker.h
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpenquan.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpegenco.h
+	"bitimage.h"
+	"jpencomp.h"
+	"jpgexcep.h"
+
+1341350027 c:\xavi\software engineering\codeblocks\jpghide\include\bitimage.h
+	<iostream>
+	"datatype.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpencomp.h
+	"bitimage.h"
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpgexcep.h
+	"grexcept.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\grexcept.h
+	<stdexcept>
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpegdeco.h
+	<iostream>
+	"datatype.h"
+	"jpgexcep.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpdecomp.h
+	"jpeg.h"
+	"jfif.h"
+	"jpdedu.h"
+	"jpdehuff.h"
+	"jpdecobk.h"
+	"jpdehuff.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jfif.h
+	"jpeg.h"
+
+1341526713 c:\xavi\software engineering\codeblocks\jpghide\include\jpdedu.h
+	<iostream>
+	"jpeg.h"
+	"jpdequan.h"
+	"jpdecobk.h"
+
+1341352620 c:\xavi\software engineering\codeblocks\jpghide\include\jpdequan.h
+	<iostream>
+	"jpeg.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpdecobk.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpdehuff.h
+	"jpeg.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\bmpdecod.h
+	<iostream>
+	"bitimage.h"
+	"grexcept.h"
+	"bmp.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\bmp.h
+	"grexcept.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\bmpencod.h
+	<iostream>
+	"bitimage.h"
+	"bmp.h"
+
+1341464111 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\bitimage.cpp
+	"bitimage.h"
+	"grexcept.h"
+
+1341350027 c:\xavi\software engineering\codeblocks\jpghide\jpeg\bitimage.h
+	<iostream>
+	"datatype.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\datatype.h
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\grexcept.h
+	<stdexcept>
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\bmpdecod.cpp
+	<windows.h>
+	"bmpdecod.h"
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\windows.h
+	<winresrc.h>
+	<excpt.h>
+	<stdarg.h>
+	<windef.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<wincon.h>
+	<winver.h>
+	<winreg.h>
+	<winnetwk.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<winsock.h>
+	<wincrypt.h>
+	<winefs.h>
+	<winscard.h>
+	<winspool.h>
+	<ole.h>
+	<ole2.h>
+	<commdlg.h>
+	<stralign.h>
+	<winwlm.h>
+	<ole2.h>
+	<winsvc.h>
+	<mcx.h>
+	<imm.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winresrc.h
+	<winuser.rh>
+	<commctrl.rh>
+	<dde.rh>
+	<winnt.rh>
+	<dlgs.h>
+	<winver.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winuser.rh
+
+1113519278 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\commctrl.rh
+
+1113519280 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\dde.rh
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winnt.rh
+
+1113519282 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\dlgs.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winver.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\windef.h
+	<winnt.h>
+	<specstrings.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winnt.h
+	<ctype.h>
+	<specstrings.h>
+	<basetsd.h>
+	<guiddef.h>
+	<pshpack4.h>
+	<poppack.h>
+	"pshpack4.h"
+	"pshpack2.h"
+	"pshpack1.h"
+	"poppack.h"
+	"pshpack2.h"
+	<pshpack2.h>
+	<poppack.h>
+	"poppack.h"
+	"pshpack8.h"
+	"poppack.h"
+	"poppack.h"
+	<string.h>
+	<string.h>
+
+1113519298 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\specstrings.h
+
+1113519276 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\basetsd.h
+
+1113519284 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\guiddef.h
+	<string.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\pshpack4.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\poppack.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\pshpack2.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\pshpack1.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\pshpack8.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winbase.h
+	<macwin32.h>
+	<winerror.h>
+	"winbase.inl"
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winerror.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winbase.inl
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\wingdi.h
+	<macwin32.h>
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack2.h>
+	<poppack.h>
+	<pshpack2.h>
+	<poppack.h>
+	<pshpack4.h>
+	<poppack.h>
+	"pshpack4.h"
+	"poppack.h"
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winuser.h
+	<macwin32.h>
+	<stdarg.h>
+	<pshpack2.h>
+	<poppack.h>
+	<tvout.h>
+	"winuser.inl"
+
+1113519300 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\tvout.h
+	<guiddef.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winuser.inl
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winnls.h
+	<macwin32.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\wincon.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winreg.h
+	<macwin32.h>
+	<reason.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\reason.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winnetwk.h
+
+1113519276 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\cderr.h
+
+1113519280 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\dde.h
+	<windef.h>
+
+1113519280 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\ddeml.h
+
+1113519286 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\lzexpand.h
+
+1113519288 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\mmsystem.h
+	<pshpack1.h>
+	<macwin32.h>
+	<poppack.h>
+
+1113519292 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\nb30.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpc.h
+	<windows.h>
+	<pshpack2.h>
+	<basetsd.h>
+	<pshpack8.h>
+	<setjmp.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcerr.h>
+	<rpcmac.h>
+	<poppack.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<excpt.h>
+	<winerror.h>
+	<rpcasync.h>
+	<poppack.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcdce.h
+	<specstrings.h>
+	<guiddef.h>
+	<rpcdcep.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcdcep.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcnsi.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcnterr.h
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcasync.h
+	<pshpack8.h>
+	<poppack.h>
+
+1113519298 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\shellapi.h
+	<pshpack1.h>
+	<poppack.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winperf.h
+	<pshpack8.h>
+	<poppack.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winsock.h
+	<windows.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\wincrypt.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winefs.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winscard.h
+	<wtypes.h>
+	<winioctl.h>
+	"winsmcrd.h"
+	"SCardErr.h"
+
+1113519304 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\wtypes.h
+	"rpc.h"
+	"rpcndr.h"
+	"basetsd.h"
+	"guiddef.h"
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcndr.h
+	<pshpack8.h>
+	<basetsd.h>
+	<rpcnsip.h>
+	<poppack.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\rpcnsip.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winioctl.h
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack1.h>
+	<poppack.h>
+	<pshpack1.h>
+	<poppack.h>
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winsmcrd.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winspool.h
+	<prsht.h>
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\prsht.h
+	<pshpack8.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\ole.h
+	<pshpack1.h>
+	<poppack.h>
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\ole2.h
+	<pshpack8.h>
+	"macname1.h"
+	<winerror.h>
+	<macpub.h>
+	<objbase.h>
+	<oleauto.h>
+	<oleidl.h>
+	<poppack.h>
+	<macapi.h>
+	"macname2.h"
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<pshpack8.h>
+	<stdlib.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<guiddef.h>
+	<cguid.h>
+	<urlmon.h>
+	<propidl.h>
+	<poppack.h>
+
+1113519300 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\unknwn.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"wtypes.h"
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\objidl.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"unknwn.h"
+
+1113519276 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\cguid.h
+
+1113519300 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\urlmon.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"objidl.h"
+	"oleidl.h"
+	"servprov.h"
+	"msxml.h"
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\oleidl.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"objidl.h"
+
+1113519298 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\servprov.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"objidl.h"
+
+1113519292 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\msxml.h
+	"rpc.h"
+	"rpcndr.h"
+	"unknwn.h"
+	"objidl.h"
+	"oaidl.h"
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\oaidl.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"objidl.h"
+
+1113519296 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\propidl.h
+	"rpc.h"
+	"rpcndr.h"
+	"windows.h"
+	"ole2.h"
+	"objidl.h"
+	"oaidl.h"
+
+1113519294 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\oleauto.h
+	<pshpack8.h>
+	<oaidl.h>
+	<poppack.h>
+
+1113519278 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\commdlg.h
+	<prsht.h>
+	<pshpack1.h>
+	<poppack.h>
+
+1113519298 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\stralign.h
+
+1113519302 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\winsvc.h
+
+1113519286 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\mcx.h
+
+1113519284 c:\program files (x86)\microsoft visual studio 8\vc\platformsdk\include\imm.h
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\bmpdecod.h
+	<iostream>
+	"bitimage.h"
+	"grexcept.h"
+	"bmp.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\bmp.h
+	"grexcept.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\bmpencod.cpp
+	<windows.h>
+	"bmpencod.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\bmpencod.h
+	<iostream>
+	"bitimage.h"
+	"bmp.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\decoder.cpp
+	"Hide.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\hide.h
+	<fstream>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"jpencobk.h"
+	"jpenquan.h"
+	"jpegenco.h"
+	"jpegdeco.h"
+	"jpdecomp.h"
+	"jpdequan.h"
+	"bmpdecod.h"
+	"bmpencod.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpencobk.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpeg.h
+	"datatype.h"
+	"jpmarker.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpmarker.h
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpenquan.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpegenco.h
+	"bitimage.h"
+	"jpencomp.h"
+	"jpgexcep.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpencomp.h
+	"bitimage.h"
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpgexcep.h
+	"grexcept.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpegdeco.h
+	<iostream>
+	"datatype.h"
+	"jpgexcep.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdecomp.h
+	"jpeg.h"
+	"jfif.h"
+	"jpdedu.h"
+	"jpdehuff.h"
+	"jpdecobk.h"
+	"jpdehuff.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jfif.h
+	"jpeg.h"
+
+1341463487 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdedu.h
+	<iostream>
+	"jpeg.h"
+	"jpdequan.h"
+	"jpdecobk.h"
+
+1341352620 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdequan.h
+	<iostream>
+	"jpeg.h"
+	"bitimage.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdecobk.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdehuff.h
+	"jpeg.h"
+	"bitimage.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\encoder.cpp
+	"Hide.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jfif.cpp
+	"jfif.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdecomp.cpp
+	"jpdecomp.h"
+	"jpgexcep.h"
+	"jpdequan.h"
+	"jpegdeco.h"
+	"jpdecobk.h"
+	"jpeg.h"
+	"bitimage.h"
+
+1341435924 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdedu.cpp
+	<math.h>
+	"jpdedu.h"
+	"Hide.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdehuff.cpp
+	"jpdehuff.h"
+	"jpegdeco.h"
+	"jpgexcep.h"
+
+1341352542 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpdequan.cpp
+	<iostream>
+	"jpdequan.h"
+	"jpegdeco.h"
+	"jpgexcep.h"
+	"Hide.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpeg.cpp
+	"jpeg.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpegdeco.cpp
+	<iostream>
+	"jpegdeco.h"
+	"jfif.h"
+	"jpdehuff.h"
+	"bitimage.h"
+	"jpdequan.h"
+	"jpdecomp.h"
+	<limits.h>
+
+1341526274 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpegdump.cpp
+	<fstream>
+	<iostream>
+	<iomanip>
+	<string.h>
+	<errno.h>
+	"datatype.h"
+	"jpmarker.h"
+	"jfif.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpegenco.cpp
+	<math.h>
+	<string>
+	"jpegenco.h"
+	"bitimage.h"
+	"jfif.h"
+	"jpenquan.h"
+	"jpenhuff.h"
+	"Hide.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpenhuff.h
+	"jpeg.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpencomp.cpp
+	"jpegenco.h"
+	"jpencomp.h"
+	"jfif.h"
+	"jpencobk.h"
+	"jpendu.h"
+	"jpenhuff.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpendu.h
+	"jpeg.h"
+	"jpencobk.h"
+	"jpenquan.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpendu.cpp
+	<stdio.h>
+	<math.h>
+	"jpendu.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpenhuff.cpp
+	"jpenhuff.h"
+	"jpegenco.h"
+	"jpgexcep.h"
+
+1341351278 source:c:\xavi\software engineering\codeblocks\jpghide\jpeg\jpenquan.cpp
+	"jpenquan.h"
+	"jpegenco.h"
+	"jpgexcep.h"
+	"Hide.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpenhuff.h
+	"jpeg.h"
+
+1341351278 c:\xavi\software engineering\codeblocks\jpghide\include\jpendu.h
+	"jpeg.h"
+	"jpencobk.h"
+	"jpenquan.h"
+
+1341526017 source:c:\xavi\software engineering\codeblocks\jpghide\main.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+	<io.h>
+	"Hide.h"
+

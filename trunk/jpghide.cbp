@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="jpghide" />
+		<Option pch_mode="2" />
+		<Option compiler="msvc8" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\jpghide" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools" />
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\jpghide" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="msvc8" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Include" />
+		</Compiler>
+		<Unit filename="Hide.cpp" />
+		<Unit filename="jpeg\Hide.h" />
+		<Unit filename="jpeg\bitimage.cpp" />
+		<Unit filename="jpeg\bitimage.h" />
+		<Unit filename="jpeg\bmp.h" />
+		<Unit filename="jpeg\bmpdecod.cpp" />
+		<Unit filename="jpeg\bmpdecod.h" />
+		<Unit filename="jpeg\bmpencod.cpp" />
+		<Unit filename="jpeg\bmpencod.h" />
+		<Unit filename="jpeg\datatype.h" />
+		<Unit filename="jpeg\decoder.cpp" />
+		<Unit filename="jpeg\encoder.cpp" />
+		<Unit filename="jpeg\grexcept.h" />
+		<Unit filename="jpeg\jfif.cpp" />
+		<Unit filename="jpeg\jfif.h" />
+		<Unit filename="jpeg\jpdecobk.h" />
+		<Unit filename="jpeg\jpdecomp.cpp" />
+		<Unit filename="jpeg\jpdecomp.h" />
+		<Unit filename="jpeg\jpdedu.cpp" />
+		<Unit filename="jpeg\jpdedu.h" />
+		<Unit filename="jpeg\jpdehuff.cpp" />
+		<Unit filename="jpeg\jpdehuff.h" />
+		<Unit filename="jpeg\jpdequan.cpp" />
+		<Unit filename="jpeg\jpdequan.h" />
+		<Unit filename="jpeg\jpeg.cpp" />
+		<Unit filename="jpeg\jpeg.h" />
+		<Unit filename="jpeg\jpegdeco.cpp" />
+		<Unit filename="jpeg\jpegdeco.h" />
+		<Unit filename="jpeg\jpegdump.cpp" />
+		<Unit filename="jpeg\jpegenco.cpp" />
+		<Unit filename="jpeg\jpegenco.h" />
+		<Unit filename="jpeg\jpencobk.h" />
+		<Unit filename="jpeg\jpencomp.cpp" />
+		<Unit filename="jpeg\jpencomp.h" />
+		<Unit filename="jpeg\jpendu.cpp" />
+		<Unit filename="jpeg\jpendu.h" />
+		<Unit filename="jpeg\jpenhuff.cpp" />
+		<Unit filename="jpeg\jpenhuff.h" />
+		<Unit filename="jpeg\jpenquan.cpp" />
+		<Unit filename="jpeg\jpenquan.h" />
+		<Unit filename="jpeg\jpgexcep.h" />
+		<Unit filename="jpeg\jpmarker.h" />
+		<Unit filename="jpeg\nonwindows.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion>
+				<search_path add="C:\Xavi\Software Engineering\CodeBlocks\jpghide\include" />
+				<search_path add="C:\Xavi\Software Engineering\CodeBlocks\jpghide\jpeg" />
+				<search_path add="C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Include" />
+			</code_completion>
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

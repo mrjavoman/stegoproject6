@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="jpeg\bmpdecod.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="537" topLine="10" />
+	</File>
+	<File name="jpeg\jpegdump.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="17798" topLine="615" />
+	</File>
+</CodeBlocks_layout_file>
