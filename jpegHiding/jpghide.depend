@@ -793,3 +793,122 @@
 	"bitimage.h"
 	"bmp.h"
 
+1341464111 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\bitimage.cpp
+	"bitimage.h"
+	"grexcept.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\bmpdecod.cpp
+	<windows.h>
+	"bmpdecod.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\bmpencod.cpp
+	<windows.h>
+	"bmpencod.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\decoder.cpp
+	"Hide.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\encoder.cpp
+	"Hide.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jfif.cpp
+	"jfif.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpdecomp.cpp
+	"jpdecomp.h"
+	"jpgexcep.h"
+	"jpdequan.h"
+	"jpegdeco.h"
+	"jpdecobk.h"
+	"jpeg.h"
+	"bitimage.h"
+
+1341435924 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpdedu.cpp
+	<math.h>
+	"jpdedu.h"
+	"Hide.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpdehuff.cpp
+	"jpdehuff.h"
+	"jpegdeco.h"
+	"jpgexcep.h"
+
+1341352542 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpdequan.cpp
+	<iostream>
+	"jpdequan.h"
+	"jpegdeco.h"
+	"jpgexcep.h"
+	"Hide.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpeg.cpp
+	"jpeg.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpegdeco.cpp
+	<iostream>
+	"jpegdeco.h"
+	"jfif.h"
+	"jpdehuff.h"
+	"bitimage.h"
+	"jpdequan.h"
+	"jpdecomp.h"
+	<limits.h>
+
+1341526274 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpegdump.cpp
+	<fstream>
+	<iostream>
+	<iomanip>
+	<string.h>
+	<errno.h>
+	"datatype.h"
+	"jpmarker.h"
+	"jfif.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpegenco.cpp
+	<math.h>
+	<string>
+	"jpegenco.h"
+	"bitimage.h"
+	"jfif.h"
+	"jpenquan.h"
+	"jpenhuff.h"
+	"Hide.h"
+
+1341351278 c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\include\jpenhuff.h
+	"jpeg.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpencomp.cpp
+	"jpegenco.h"
+	"jpencomp.h"
+	"jfif.h"
+	"jpencobk.h"
+	"jpendu.h"
+	"jpenhuff.h"
+
+1341351278 c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\include\jpendu.h
+	"jpeg.h"
+	"jpencobk.h"
+	"jpenquan.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpendu.cpp
+	<stdio.h>
+	<math.h>
+	"jpendu.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpenhuff.cpp
+	"jpenhuff.h"
+	"jpegenco.h"
+	"jpgexcep.h"
+
+1341351278 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\jpeg\jpenquan.cpp
+	"jpenquan.h"
+	"jpegenco.h"
+	"jpgexcep.h"
+	"Hide.h"
+
+1341529657 source:c:\xavi\files\bachelor degree\utsa\4953 steganography\project6\jpeghiding\main.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+	<io.h>
+	"Hide.h"
+
