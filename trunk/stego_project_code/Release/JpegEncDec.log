@@ -1,0 +1,17 @@
+﻿Build started 7/7/2012 7:34:02 PM.
+     1>Project "C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\JpegEncDec.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\JpegEncDec.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         JpegEncDec.vcxproj -> C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\Release\JpegEncDec.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\JpegEncDec.unsuccessfulbuild".
+         Touching "Release\JpegEncDec.lastbuildstate".
+     1>Done Building Project "C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\JpegEncDec.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.06
