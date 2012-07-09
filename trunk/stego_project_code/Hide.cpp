@@ -27,7 +27,7 @@ void readMsg(MESSAGE *tMsg)
 	
 	//tMsg.BYTE.bit8 = 0xE7;
 
-	printf("1=%x, 2=%x, 3=%x, 4=%x, 5=%x, 6=%x, 7=%x, 8=%x \n", 
+	printf("1=%c, 2=%c, 3=%c, 4=%c, 5=%c, 6=%c, 7=%c, 8=%c \n", 
 		tMsg->BYTE.bit1, tMsg->BYTE.bit2, tMsg->BYTE.bit3, tMsg->BYTE.bit4, 
 		tMsg->BYTE.bit5, tMsg->BYTE.bit6, tMsg->BYTE.bit7, tMsg->BYTE.bit8);
 	return;
@@ -41,6 +41,10 @@ void applyBitMask(MESSAGE *);
 char tmpMessage[] = "Hello World! This is my message. Want it to be long to test the program.";
 
 char gOutputFileName[260];
+
+unsigned char lsbMsk1[4] = { 0xfc, 0xf3, 0xcf, 0x3f };
+unsigned char lsbMsk2[4] = { 0x03, 0x0c, 0x30, 0xc0 };
+int count = 0;
 unsigned char gBitMask1[8] = { 0x01, 0x03, 0x07, 0x0f, 0x1f, 0x3f, 0x7f, 0xff };
 unsigned short gBitMask1_2[8] = { 0x01, 0x03, 0x07, 0x0f, 0x1f, 0x3f, 0x7f, 0xff };
 unsigned short gBitMask2_2[8] = { 0xFFFE, 0xFFFC, 0xFFF8, 0xFFF0, 0xFFE0, 0xFFC0, 0xFF80, 0xFF00 };
@@ -51,6 +55,8 @@ char *gMsgBuffer = NULL;
 
 MESSAGE *tMsg;
 int n = 0;
+unsigned char *aChar;
+unsigned char tmpLsb;
 
 unsigned int gMsgSize = 0;
 double gAlpha = 1.0;			// jpenquan.h
@@ -106,16 +112,32 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 			
 			if((*data)[row][row] > 1){
 				gBitCapacity += 2;
-				tMsg = (MESSAGE*) tmpMessage;
-				tMsg->BYTE.bit1 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit2 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit3 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit4 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit5 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit6 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit7 = (unsigned) (tmpMessage);
-				tMsg->BYTE.bit8 = (unsigned) (tmpMessage);
-				readMsg(tMsg);
+				aChar = (unsigned char*) (gMsgBuffer + n++ );
+//				printf("%x \n", *aChar);
+				if(count == 0){
+					count = 4;
+					tmpLsb = *aChar | lsbMsk1[0];
+					tmpLsb &= lsbMsk2[0];
+					count--;
+				}
+				else if (count == 3) {
+					tmpLsb = *aChar | lsbMsk1[1];
+					tmpLsb &= lsbMsk2[1];
+					tmpLsb >> 2;
+					count--;
+				}
+				else if (count == 2) {
+					tmpLsb = *aChar | lsbMsk1[2];
+					tmpLsb &= lsbMsk2[2];
+					tmpLsb >> 4;
+					count--;
+				}
+				else if (count == 1) {
+					tmpLsb = *aChar | lsbMsk1[3];
+					tmpLsb &= lsbMsk2[3];
+					tmpLsb >> 6;
+					count--;
+				}
 				//tMsg->BYTE.bit1 &= gBitMask1[0];
 				//applyBitMask(tMsg);
 				//gMsgBuffer += sizeof(MESSAGE*);
@@ -123,8 +145,8 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 				//tMsg.BYTE = gMsgBuffer;
 			}
 			qt.GetDataValue(row*JpegSampleWidth+col);
-			(*data)[row][col] &= 0;
-			(*data)[row][col] |= 0;	// hide data in coefficients
+			(*data)[row][col] << 2;
+			(*data)[row][col] |= tmpLsb;	// hide data in coefficients
 		}
 	return;
 } // hideInBlock
