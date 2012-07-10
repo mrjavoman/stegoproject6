@@ -112,25 +112,21 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 	for(row = 0; row < JpegSampleWidth; row++)
 		for(col = 0; col < JpegSampleWidth; col++)
 		{
-			gMsgSize;
-			
 			if((*data)[row][col] > 1 || (*data)[row][col] < 0){
 				currentData = (*data)[row][col];
 				isHiding = true;
 				gBitCapacity += 1;
 				
 				if(count == 0){
-					
 					aChar = (unsigned char*) (gMsgBuffer + n++ );
-					count = total = 8;
-					
+					count = total = 4;
+
 					for(int i = 0; i < count; i++) {
 						bits[i] = *aChar & lsbMsk3[i];
 						if( i > 0 ){
 							bits[i] >>= i;
 						}
 					}
-										
 					tmpLsb = bits[0];
 					count--;
 				}
@@ -142,14 +138,9 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 			}
 			if(isHiding){
 				qt.GetDataValue(row*JpegSampleWidth+col);
-				//(*data)[row][col] <<= 1;
+				(*data)[row][col] &= -2;
 				(*data)[row][col] |= tmpLsb;	// hide data in coefficients
 				isHiding = false;
-			}
-			else{
-				qt.GetDataValue(row*JpegSampleWidth+col);
-				(*data)[row][col] &= 0;
-				(*data)[row][col] |= 0;	// hide data in coefficients
 			}
 		}
 	return;
