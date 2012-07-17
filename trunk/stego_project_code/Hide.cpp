@@ -113,32 +113,41 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 		for(col = 0; col < JpegSampleWidth; col++)
 		{
 			if((*data)[row][col] > 1 || (*data)[row][col] < 0){
-				currentData = (*data)[row][col];
+				//set isHiding = true so that we only hide on coefficients that are > 1 and < 0 
 				isHiding = true;
+				//increment gBitCapacity one byte at a time to messure total capacity of the file
 				gBitCapacity += 1;
 				
+				//grab a byte from message to be hidden only when count is 0
 				if(count == 0){
+					//grab a byte and put it into a character pointer then do pointer arithmetic to advance the pointer to the next byte
 					aChar = (unsigned char*) (gMsgBuffer + n++ );
-					count = total = 4;
+					count = total = 8; //set count and total to 8, we will split the byte into 8 bits
 
+					//split the byte we grabed into 8 bits and for any bit > 1 we will shift to the left i times
+					//so that on bits[i] we only have 1's and 0's
 					for(int i = 0; i < count; i++) {
 						bits[i] = *aChar & lsbMsk3[i];
 						if( i > 0 ){
 							bits[i] >>= i;
 						}
 					}
+					//set first bit to embed 
 					tmpLsb = bits[0];
 					count--;
 				}
 				else {
+					//now that we already have all the bits in bits[i] we just iterate through the next bits and embed them
+					//in the subsecuent bytes of the cover image
 					tmpLsb = bits[total-count];
 					count--;
 				}
 								
 			}
 			if(isHiding){
+				//get the quantatization table
 				qt.GetDataValue(row*JpegSampleWidth+col);
-				(*data)[row][col] &= -2;
+				(*data)[row][col] &= -2;		// and the coefficient with -2 which is the same as 11111110
 				(*data)[row][col] |= tmpLsb;	// hide data in coefficients
 				isHiding = false;
 			}
