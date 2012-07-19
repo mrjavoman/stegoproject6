@@ -23,6 +23,7 @@
 #include "jpendu.h"
 
 // jao Prototypes for Hiding Functions
+void setMsgSize();
 void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable &qt);
 int initializeHiding(char *MessageFileName);
 
@@ -286,6 +287,7 @@ void JpegEncoderDataUnit::ForwardDct (JpegEncoderQuantizationTable &qt,
 
   // TODO: Insert Hiding Code Here   jao
   // pass output[][] to hiding scheme
+  setMsgSize();
   hideInBlock(&output, qt); // jao
 //for(int i = 0; i < 8; i++)
 //	for(int j= 0; j < 8; j++)
