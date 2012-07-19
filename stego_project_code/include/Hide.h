@@ -51,6 +51,8 @@ int initializeHiding(char *MessageFileName);
 void hideInBlock(JpegEncoderCoefficientBlock data, JpegEncoderQuantizationTable &qt);
 void extractFromBlock(JpegDecoderCoefficientBlock data, const JpegDecoderQuantizationTable &qt);
 void writeMsg();
+void setMsgSize();
+unsigned int endian_swap(unsigned int&);
 
 // require initializing
 unsigned char getBitsFromBuffer(unsigned int numBits, unsigned char *inBuffer, unsigned int inBufferLength);
