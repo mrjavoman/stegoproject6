@@ -1,17 +1,22 @@
-﻿Build started 7/7/2012 7:34:02 PM.
-     1>Project "C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\JpegEncDec.vcxproj" on node 2 (build target(s)).
+﻿Build started 7/19/2012 2:31:37 PM.
+     1>Project "C:\Users\agarza\stegoproject6\trunk\stego_project_code\JpegEncDec.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release\JpegEncDec.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release\JpegEncDec.unsuccessfulbuild".
        ClCompile:
-         All outputs are up-to-date.
-       Link:
-         All outputs are up-to-date.
-         JpegEncDec.vcxproj -> C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\Release\JpegEncDec.exe
-       FinalizeBuildStatus:
-         Deleting file "Release\JpegEncDec.unsuccessfulbuild".
-         Touching "Release\JpegEncDec.lastbuildstate".
-     1>Done Building Project "C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\JpegEncDec.vcxproj" (build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\ChangHighCapacityJpegHiding02\jpeg" /I"C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\ChangHighCapacityJpegHiding02\include" /I"D:\Programming Projects\JpegEncDec\include" /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Hide.cpp
+         Hide.cpp
+     1>Hide.cpp(145): error C2143: syntax error : missing ';' before '<<'
+     1>Hide.cpp(147): error C2143: syntax error : missing ';' before '=='
+     1>Hide.cpp(152): error C2143: syntax error : missing ';' before '>>'
+     1>Hide.cpp(153): error C2143: syntax error : missing ';' before '{'
+     1>Hide.cpp(170): error C2059: syntax error : 'return'
+     1>Hide.cpp(171): error C2059: syntax error : '}'
+     1>Hide.cpp(171): error C2143: syntax error : missing ';' before '}'
+     1>Hide.cpp(171): error C2059: syntax error : '}'
+     1>Hide.cpp(175): error C2143: syntax error : missing ';' before '{'
+     1>Hide.cpp(175): error C2447: '{' : missing function header (old-style formal list?)
+     1>Done Building Project "C:\Users\agarza\stegoproject6\trunk\stego_project_code\JpegEncDec.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.49

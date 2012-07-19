@@ -44,8 +44,8 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\jpeg;C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\jpeg;C:\Xavi\Files\Bachelor Degree\UTSA\4953 Steganography\Project6\stego_project_code\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\agarza\stegoproject6\trunk\stego_project_code\jpeg;C:\Users\agarza\stegoproject6\trunk\stego_project_code\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\agarza\stegoproject6\trunk\stego_project_code\jpeg;C:\Users\agarza\stegoproject6\trunk\stego_project_code\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
