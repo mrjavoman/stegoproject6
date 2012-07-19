@@ -181,7 +181,7 @@ void setMsgSize()
 	buff = (unsigned int*) (gMsgBuffer);
 	//the message buffer is little endian so we must convert to big endian or else we will get the wrong number
 	*buff = endian_swap(*buff);
-	//assign our unsigned int to buffSize an now we have or message size
+	//assign our unsigned int to buffSize an now we have the message size
 	msgSize = *buff;
 
 	return;
