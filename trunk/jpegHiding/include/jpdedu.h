@@ -46,7 +46,7 @@ public:
   void Print (std::ostream &) const ;
 
   // General IDCT Function
-  JpegDecoderDataUnit &JpegDecoderDataUnit::InverseDCT (
+  JpegDecoderDataUnit &InverseDCT (
                         JpegDecoderCoefficientBlock cb,
                         const JpegDecoderQuantizationTable  &qt) ;
 

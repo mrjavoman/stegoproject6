@@ -40,7 +40,8 @@ void Usage (int argc, char *argv [])
 
 int main(int argc, char *argv[])
 {
-	int test = 0, i, x, fileno, size;
+	int test = 0, i, x, fileno;
+	int size;
 	char ch, *ext, *inputFile, *outputFile, inExt, outExt;
 	bool g, p, v;
 	double tmpDbl;
