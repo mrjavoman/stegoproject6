@@ -18,6 +18,7 @@
 #include "bitimage.h"
 #include "grexcept.h"
 
+
 // Function to round a row width up to the nearest multiple of
 // RowRounding. Windows expects rows to be a length that is a multiple of
 // four.
