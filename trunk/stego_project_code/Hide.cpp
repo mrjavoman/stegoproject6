@@ -7,14 +7,6 @@
 #include <cstdint>
 
 
-typedef struct MESSAGE_SIZE
-{
-	unsigned char byte0;
-	unsigned char byte1;
-	unsigned char byte2;
-	unsigned char byte3;
-} msg_sz;
-
 char tmpMessage[] = "Hello World! This is my message. Want it to be long to test the program.";
 
 char gOutputFileName[260];
@@ -34,17 +26,26 @@ unsigned int gBitCapacity = 0;
 
 char *gMsgBuffer = NULL;
 char *outputMsgBuffer = NULL;
+char * tmpBuffer = NULL;
+
+unsigned int *buff;
 
 int msgSize = 0;
+unsigned char outputByte;
 
 int n = 0;
 int t = 0;
 
+short coverData;
+
 unsigned char *aChar = 0;
 unsigned char currentData;
 unsigned char tmpLsb;
+
 bool isHiding = false;
 bool isExtracting = false;
+bool sizeSet = false;
+bool setBufferForWrite = false;
 
 unsigned int gMsgSize = 0;
 double gAlpha = 1.0;			// jpenquan.h
@@ -89,7 +90,10 @@ double getUniformity_E(JpegEncoderCoefficientBlock data)
 void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable &qt)
 {
 	unsigned int row, col;
-
+	if(!sizeSet){
+		setMsgSize(); //set the message size for
+		sizeSet = true;
+	}
 
 	// check for simple conversions - no hiding/extracting
 	if(gHideMsg == false) return;
@@ -106,11 +110,15 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 				//grab a byte from message to be hidden only when count is 0
 				if( n < msgSize) {
 					if(count == 0){
-
+						//if(n < 4){
+						//ptrSize = (unsigned int *) msgSize;
+						//aChar = (unsigned char *) (buff + n++);
+						//}
+						//else {
 						//grab a byte and put it into a character pointer then do pointer arithmetic to advance the pointer to the next byte
 						aChar = (unsigned char*) (gMsgBuffer + n++ );
+						//}
 						count = total = 8; //set count and total to 8, we will split the byte into 8 bits
-
 						//split the byte we grabed into 8 bits and for any bit > 1 we will shift to the left i times
 						//so that on bits[i] we only have 1's and 0's
 						for(int i = 0; i < count; i++) {
@@ -147,6 +155,10 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 // takes the buffer, extracts a filename, and writes the rest of the data to disk
 void writeMsg()
 {
+	
+	gImage.Clear();
+	readJpg(outputMsgBuffer, false);
+	
 	writeJpg(outputMsgBuffer,false,false);
 	return;
 } // writeMsg
@@ -155,9 +167,23 @@ void writeMsg()
 void setMsgSize()
 {
 	//pointer for holding first 4 bytes of message
-	unsigned int *buff;
+
 	//an int is 4 bytes long so if we read from buffer into an int we will read the first 4 bytes of the message
-	buff = (unsigned int*) (gMsgBuffer);
+	//buff = (unsigned int*) (gMsgBuffer);
+	//the message buffer is little endian so we must convert to big endian or else we will get the wrong number
+	//*buff = endian_swap(*buff);
+	//assign our unsigned int to buffSize an now we have the message size
+	//msgSize = *buff;
+	msgSize = 1721;
+	return;
+} // setMsgSize
+
+void setMsgOutputSize()
+{
+	//pointer for holding first 4 bytes of message
+	//unsigned int *buff;
+	//an int is 4 bytes long so if we read from buffer into an int we will read the first 4 bytes of the message
+	buff = (unsigned int*) (tmpBuffer);
 	//the message buffer is little endian so we must convert to big endian or else we will get the wrong number
 	*buff = endian_swap(*buff);
 	//assign our unsigned int to buffSize an now we have the message size
@@ -176,10 +202,32 @@ inline unsigned int endian_swap(unsigned int& x)
 		( (x & 0xFF000000) >> 24 ) );
 }
 
-
 // takes some number of bits and places them in a inBufferfer
 int putBitsInBuffer(unsigned int numBits, unsigned char bits, unsigned char *outBuffer, unsigned int outBufferLength)
 {
+	return(SUCCESS);
+} // putBitsInBuffer
+
+int putBitsInBuffer2()
+{
+	
+	for(int i = 0; i < 8; i++) {
+		if( i > 0 ){
+			extBits[i] <<= i;
+		}
+	}
+
+	outputByte = extBits[0] | extBits[1] | extBits[2] | extBits[3] | extBits[4] | extBits[5] | extBits[6] | extBits[7];
+	*outputMsgBuffer = outputByte;
+	outputMsgBuffer++;
+	t++;
+
+	if(t == 4){
+		tmpBuffer = (char *) malloc(10000);
+		tmpBuffer = outputMsgBuffer - 4;
+		setMsgOutputSize();
+	}
+
 	return(SUCCESS);
 } // putBitsInBuffer
 
@@ -193,46 +241,36 @@ double getUniformity_D(JpegDecoderCoefficientBlock data)
 void extractFromBlock(JpegDecoderCoefficientBlock data, const JpegDecoderQuantizationTable &qt)
 {
 	unsigned int row, col;
-	short coverData;
-	unsigned char outputByte;
+
+	for(row = 0; row < JpegSampleWidth; row++)
+		for(col = 0; col < JpegSampleWidth; col++)
+		{
+			//read a byte
+			qt.GetDataValue(row*JpegSampleWidth+col);
+			coverData = data[row][col];
 	
-	
-
-	for(row = 0; row < JpegSampleWidth; row++){
-
-		//read a byte
-		qt.GetDataValue(row*JpegSampleWidth);
-		coverData = (*data)[row];
-
-		if(coverData > 1 || coverData < 0){
-			if(msgSize > t ){
-				if(bitNum == 0){
-
-					for(int i = 0; i < 8; i++) {
-						if( i > 0 ){
-							extBits[i] <<= i;
-						}
-					}
-
-					outputByte = extBits[0] | extBits[1] | extBits[2] | extBits[3] | extBits[4] | extBits[5] | extBits[6] | extBits[7];
-					*outputMsgBuffer = outputByte;
-					outputMsgBuffer++;
-
-					bitNum = 8;
-				}else{
+			if(coverData > 1 || coverData < 0){
+				gBitCapacity++;
+				if(1721 > t ){
 					
-					extBits[8 - bitNum] = coverData &= 1;
+					extBits[8 - bitNum] = coverData & 1;
 					bitNum--;
+					if(bitNum == 0){
+						putBitsInBuffer2();
+						bitNum = 8;
+					}
 				}
-			}
-			else{
-				outputMsgBuffer - msgSize;
-			}
-			t++;
-		}
-	}
+				else{
+					if(!setBufferForWrite){
+						outputMsgBuffer = outputMsgBuffer - (t-4);
+						setBufferForWrite = true;
+					}
+				}
 
-	return;
+			}
+		}
+
+		return;
 } // extractFromBlock
 
 
