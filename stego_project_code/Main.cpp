@@ -123,6 +123,7 @@ int main(int argc, char *argv[])
 				size = (int) _filelength(fileno) + (int) strlen(argv[i]) + 5; // get length of message file
 															// the +5 allows for 4-byte length & NULL terminator
 				gMsgBuffer = (char *) malloc(size);
+				
 				if(gMsgBuffer == NULL)
 				{
 					printf("Could not allocate memory for message file.\n\n");
@@ -341,7 +342,7 @@ int main(int argc, char *argv[])
 			outputFile = gOutputFileName;		// overwrite original file
 			strcpy(gOutputFileName, inputFile);
 		}
-
+		
 		readJpg(inputFile, v);
 
 		if(gWipeMsg || gDestroyMsg)
@@ -349,7 +350,7 @@ int main(int argc, char *argv[])
 
 		if(gExtractMsg && gMsgSize > 0) writeMsg();
 
-		printf("\n\nStorage Capacity: %d bits (%d bytes)\nMessage Size: %d bytes\n", gBitCapacity, gBitCapacity/8, gMsgSize);
+		printf("\n\nStorage Capacity: %d bits (%d bytes)\nMessage Size: %d bytes\n", gBitCapacity, gBitCapacity/8, msgSize);
 		if( (gBitCapacity/8) < gMsgSize) printf("\n\nWARNING! ENTIRE MESSAGE WAS NOT EXTRACTED!!!\n\n");
 	} // if extracting, wiping, or destroying
 
