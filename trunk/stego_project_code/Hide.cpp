@@ -7,6 +7,7 @@
 #include <cstdint>
 
 
+
 char tmpMessage[] = "Hello World! This is my message. Want it to be long to test the program.";
 
 char gOutputFileName[260];
@@ -28,18 +29,11 @@ char *gMsgBuffer = NULL;
 char *outputMsgBuffer = NULL;
 char * tmpBuffer = NULL;
 
-unsigned int *buff;
-
 int msgSize = 0;
 unsigned char outputByte;
-
 int n = 0;
-int t = 0;
-
 short coverData;
-
 unsigned char *aChar = 0;
-unsigned char currentData;
 unsigned char tmpLsb;
 
 bool isHiding = false;
@@ -90,6 +84,7 @@ double getUniformity_E(JpegEncoderCoefficientBlock data)
 void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable &qt)
 {
 	unsigned int row, col;
+
 	if(!sizeSet){
 		setMsgSize(); //set the message size for
 		sizeSet = true;
@@ -110,15 +105,12 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 				//grab a byte from message to be hidden only when count is 0
 				if( n < msgSize) {
 					if(count == 0){
-						//if(n < 4){
-						//ptrSize = (unsigned int *) msgSize;
-						//aChar = (unsigned char *) (buff + n++);
-						//}
-						//else {
-						//grab a byte and put it into a character pointer then do pointer arithmetic to advance the pointer to the next byte
+						
+						//grab a byte and put it into a character pointer 
+						//then do pointer arithmetic to advance the pointer to the next byte
 						aChar = (unsigned char*) (gMsgBuffer + n++ );
-						//}
 						count = total = 8; //set count and total to 8, we will split the byte into 8 bits
+
 						//split the byte we grabed into 8 bits and for any bit > 1 we will shift to the left i times
 						//so that on bits[i] we only have 1's and 0's
 						for(int i = 0; i < count; i++) {
@@ -156,10 +148,32 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 void writeMsg()
 {
 	
-	gImage.Clear();
-	readJpg(outputMsgBuffer, false);
+	FILE *pfile;
+	int i = 0;
+	unsigned char * charByte = 0;
+	const char * fileStart = "";
 	
-	writeJpg(outputMsgBuffer,false,false);
+	//loop until you find the start of the file, the jpg has a 255 at the start of the file
+	//and there is a 0 right behind it, anything before that is the name of the embeded file
+	do{
+		charByte = (unsigned char*) outputMsgBuffer; //read one char at a time from the buffer
+		gOutputFileName[i++] = (char) *charByte; //add the char to the filename array
+		outputMsgBuffer++; //increment the buffer position by 1
+	}while(strcmp((char *) charByte, fileStart ) != 0); // compare to see if the char you read is at the begining of image file
+		
+	//open a file and give it the name you read from the buffer
+	pfile = fopen (gOutputFileName, "wb");
+	
+	//write the file
+	fwrite (outputMsgBuffer, 1, msgSize, pfile);  
+	fclose(pfile); //close file pointer
+
+	if(gMsgBuffer != NULL)
+	{
+		outputMsgBuffer = outputMsgBuffer - i; //return the buffer pointer to the original position
+		free(outputMsgBuffer); //free the memory
+	}
+
 	return;
 } // writeMsg
 
@@ -167,26 +181,28 @@ void writeMsg()
 void setMsgSize()
 {
 	//pointer for holding first 4 bytes of message
-
+	unsigned int *buff;
 	//an int is 4 bytes long so if we read from buffer into an int we will read the first 4 bytes of the message
-	//buff = (unsigned int*) (gMsgBuffer);
+	buff = (unsigned int*) (gMsgBuffer);
 	//the message buffer is little endian so we must convert to big endian or else we will get the wrong number
-	//*buff = endian_swap(*buff);
+	*buff = endian_swap(*buff);
 	//assign our unsigned int to buffSize an now we have the message size
-	//msgSize = *buff;
-	msgSize = 1721;
+	msgSize = *buff;
+
 	return;
 } // setMsgSize
 
 void setMsgOutputSize()
 {
 	//pointer for holding first 4 bytes of message
-	//unsigned int *buff;
+	unsigned int *buff;
 	//an int is 4 bytes long so if we read from buffer into an int we will read the first 4 bytes of the message
 	buff = (unsigned int*) (tmpBuffer);
+	
 	//the message buffer is little endian so we must convert to big endian or else we will get the wrong number
-	*buff = endian_swap(*buff);
+	//*buff = endian_swap(*buff);
 	//assign our unsigned int to buffSize an now we have the message size
+
 	msgSize = *buff;
 	outputMsgBuffer = (char *) malloc(msgSize);
 
@@ -210,26 +226,27 @@ int putBitsInBuffer(unsigned int numBits, unsigned char bits, unsigned char *out
 
 int putBitsInBuffer2()
 {
-	
+	//shift all the bits to it corresponding position
 	for(int i = 0; i < 8; i++) {
 		if( i > 0 ){
 			extBits[i] <<= i;
 		}
 	}
 
+	//or all the bits from the array and put it in just one variable
 	outputByte = extBits[0] | extBits[1] | extBits[2] | extBits[3] | extBits[4] | extBits[5] | extBits[6] | extBits[7];
-	*outputMsgBuffer = outputByte;
-	outputMsgBuffer++;
-	t++;
+	*outputMsgBuffer = outputByte; //add byte to the output buffer
+	outputMsgBuffer++; //increment the buffer for the next byte
+	n++;
 
-	if(t == 4){
+	if(n == 4){
 		tmpBuffer = (char *) malloc(10000);
 		tmpBuffer = outputMsgBuffer - 4;
 		setMsgOutputSize();
 	}
 
 	return(SUCCESS);
-} // putBitsInBuffer
+} // putBitsInBuffer2
 
 // this function gets the Uniformity Factor
 double getUniformity_D(JpegDecoderCoefficientBlock data)
@@ -242,6 +259,14 @@ void extractFromBlock(JpegDecoderCoefficientBlock data, const JpegDecoderQuantiz
 {
 	unsigned int row, col;
 
+	//initialize buffer for reading the size of hiden file
+	if(outputMsgBuffer == NULL){
+		//there must be a better way of doing this, until then... 
+		msgSize = 10000;
+		outputMsgBuffer = (char *) malloc(msgSize);
+	}
+
+
 	for(row = 0; row < JpegSampleWidth; row++)
 		for(col = 0; col < JpegSampleWidth; col++)
 		{
@@ -249,21 +274,30 @@ void extractFromBlock(JpegDecoderCoefficientBlock data, const JpegDecoderQuantiz
 			qt.GetDataValue(row*JpegSampleWidth+col);
 			coverData = data[row][col];
 	
+			//if dct coefficient in cover data is > 1 or < 0 then read then extract lsb
 			if(coverData > 1 || coverData < 0){
-				gBitCapacity++;
-				if(1721 > t ){
-					
-					extBits[8 - bitNum] = coverData & 1;
+				
+				gBitCapacity++; //increment capacity
+
+				// extract lsb from coefficients as long as is within the message size
+				// at first msgSize will be a big number to allow the program to extract the size from the hidden image
+				// then msgSize will be overwritten to the actual size of the embeded image
+				if(msgSize > n ){
+					//extarct lsb from the dct coefficient and put it in an array
+					extBits[8 - bitNum] = coverData & 1; 
 					bitNum--;
 					if(bitNum == 0){
-						putBitsInBuffer2();
-						bitNum = 8;
+						putBitsInBuffer2(); //once the extration bits array is full put it in the output buffer
+						bitNum = 8; //reset the array counter for reading the next byte
 					}
 				}
 				else{
+					// return the output buffer to its original position
+					//subtract 4 from n to compensate for the first four bytes
+					//that were overwritten when msgSize was set
 					if(!setBufferForWrite){
-						outputMsgBuffer = outputMsgBuffer - (t-4);
-						setBufferForWrite = true;
+						outputMsgBuffer = outputMsgBuffer - (n-4); 
+						setBufferForWrite = true; //makes sure this if only executes once
 					}
 				}
 
