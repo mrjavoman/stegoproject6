@@ -38,6 +38,8 @@ extern bool gHideMsg;
 extern double lg2; // lg2 = natural log 2
 extern double lgQ; // lg2 of quality factor
 extern unsigned int gBitCapacity;
+extern int msgSize;
+extern char *outputMsgBuffer;
 
 // encoding/decoding objects
 extern JpegEncoder gJpgEncoder;
@@ -57,6 +59,7 @@ unsigned int endian_swap(unsigned int&);
 // require initializing
 unsigned char getBitsFromBuffer(unsigned int numBits, unsigned char *inBuffer, unsigned int inBufferLength);
 int putBitsInBuffer(unsigned int numBits, unsigned char bits, unsigned char *outBuffer, unsigned int outBufferLength);
+int putBitsInBuffer2();
 
 int readBitmap(char *inputFile);
 int readJpg(char *inputFile, bool v);
