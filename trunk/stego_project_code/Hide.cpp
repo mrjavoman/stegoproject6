@@ -6,8 +6,6 @@
 #include "include\Hide.h"
 #include <cstdint>
 
-
-
 char tmpMessage[] = "Hello World! This is my message. Want it to be long to test the program.";
 
 char gOutputFileName[260];
@@ -87,6 +85,7 @@ void hideInBlock(JpegEncoderCoefficientBlock *data, JpegEncoderQuantizationTable
 
 	if(!sizeSet){
 		setMsgSize(); //set the message size for
+		n = 0;
 		sizeSet = true;
 	}
 
@@ -226,7 +225,7 @@ int putBitsInBuffer(unsigned int numBits, unsigned char bits, unsigned char *out
 
 int putBitsInBuffer2()
 {
-	//shift all the bits to it corresponding position
+	//shift all the bits to its corresponding position
 	for(int i = 0; i < 8; i++) {
 		if( i > 0 ){
 			extBits[i] <<= i;
